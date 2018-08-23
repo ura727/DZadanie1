@@ -67,80 +67,45 @@ echo '</br>';
 echo 'Задание #5</br>';
 
 
-$bmv = ['model_1' => 'X5', 'speed_1' => 120, 'doors_1' => 5, 'year_1' => '2015'];
+$bmv = [
+    'model' => 'X5',
+    'speed' => 120,
+    'doors' => 5,
+    'year' => '2015'
+];
 
-$toyota = ['model_2' => 'RAV-4', 'speed_2' => 110, 'doors_2' => 5, 'year_2' => '2016'];
+$toyota = [
+    'model' => 'RAV-4',
+    'speed' => 110,
+    'doors' => 5,
+    'year' => '2016'
+];
 
-$opel = ['model_3' => 'MOKO', 'speed_3' => 130, 'doors_3' => 3, 'year_3' => '2014'];
+$opel = [
+    'model' => 'MOKO',
+    'speed' => 130,
+    'doors' => 3,
+    'year' => '2014'
+];
 
-$CAR = $bmv + $toyota + $opel;
+$cars = [
+        'CAR BMV' => $bmv,
+        'CAR TOYOTA' => $toyota,
+        'CAR OPEL' => $opel,
+];
 
-echo 'CAR BMV</br>';
-foreach ($bmv as $value){
-    echo $value. ' ';
+
+foreach ($bmv as $key => $value){
+    echo '<div style="border: 1px solid; padding: 20px; margin: 10px; float: left;">';
+    echo $key . '</br>';
+    foreach ($value as $v){
+        echo $v . ' ';
+    }
+    echo '</div>';
 }
-echo '</br>CAR Toyota</br>';
-foreach ($toyota as $value){
-    echo $value. ' ';
-}
-echo '</br>CAR Opel</br>';
-foreach ($opel as $value){
-    echo $value. ' ';
-}
+
 echo '</br>';
 
 
-echo 'Задание #6</br>';
 
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Таблица умножения</title>
-    <style>
-        td{
-            bottom: 1px;
-            padding: 15px;
-            text-align: center;
-        }
-
-        table{
-            border: 0px;
-        }
-    </style>
-</head>
-<body>
-<table>
-    <tr>
-        <td></td>
-
-        <?php
-        for ($i = 1; $i < 10; $i++) {
-            echo '<td>' . $i . '</td>';
-        }
-        ?>
-    </tr>
-
-    <?php
-    for ($m = 1; $m < 10; $m++) {
-        echo '<tr>' . '<td>' . $m . '</td>';
-        for ($p = 1; $p < 10; $p++) {
-            if (($m % 2 == 0) && ($p % 2 == 0)) {
-                echo '<td> (' . $m * $p . ') </td>';
-
-            } elseif (($m % 2 != 0) && ($p % 2 != 0)) {
-                echo '<td> [' . $m * $p . '] </td>';
-            } else echo '<td>' . $m * $p . '</td>';
-        }
-    }
-        ?>
-    </tr>
-</table>
-</body>
-</html>
-
-?>
